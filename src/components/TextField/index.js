@@ -42,11 +42,27 @@ const MultilineWrapper = styled.textarea`
   }
 `
 
-function TextField({ multiline, ...rest }) {
+const Label = styled.label`
+  font-size: 1.3em;
+  padding: 3px 5px;
+  color: ${({ theme }) => theme.colors.blackLight};
+`
+
+function TextField({ multiline, label, name, ...rest }) {
   if (multiline) {
-    return <MultilineWrapper rows={4} {...rest} />
+    return (
+      <div>
+        {label && <Label htmlFor={name}>{label}</Label>}
+        <MultilineWrapper id={name} name={name} {...rest} />
+      </div>
+    )
   }
-  return <Wrapper {...rest} />
+  return (
+    <div>
+      {label && <Label htmlFor={name}>{label}</Label>}
+      <Wrapper id={name} name={name} {...rest} />
+    </div>
+  )
 }
 
 export default TextField

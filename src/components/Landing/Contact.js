@@ -12,16 +12,16 @@ function Contact() {
       />
       <Row>
         <Column size={12}>
-          <TextField placeholder="Nome" />
+          <TextField placeholder="Nome" label="Nome" />
         </Column>
         <Column size={12}>
-          <TextField placeholder="Telefone" />
+          <TextField placeholder="Telefone" label="Telefone" />
         </Column>
         <Column size={12}>
-          <TextField placeholder="E-mail" />
+          <TextField placeholder="E-mail" label="E-mail" />
         </Column>
         <Column size={12}>
-          <TextField placeholder="Texto" multiline />
+          <TextField placeholder="Mensagem" label="Mensagem" multiline />
         </Column>
         <Column size={12}>
           <Button>Submeter</Button>
