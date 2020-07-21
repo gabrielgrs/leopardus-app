@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 
 const Wrapper = styled.div`
   padding: 25% 3% 30%;
-  background-image: url('https://juristecplus.com.br/wp-content/uploads/2019/10/banner-site.png?id=8061');
+  background-image: url('/img/temp/banner-site.png');
   background-size: 100%;
   background-repeat: no-repeat;
   display: flex;

@@ -48,12 +48,7 @@ function About() {
               seja, só se ganhar!
             </p>
           </Column>
-          <Column size={4}>
-            <img
-              src="https://www.lemonade.com/_next/static/images/bg-app-sketch-6a1411234063f5ee57ef246ff974ceaf.svg"
-              alt="lemonade svg"
-            />
-          </Column>
+          <Column size={4}>Imagem</Column>
         </Row>
       </Card>
     </Wrapper>

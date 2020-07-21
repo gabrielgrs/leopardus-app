@@ -37,10 +37,7 @@ function Footer() {
       <Wrapper>
         <Row>
           <Column size={4}>
-            <img
-              src="https://leopardus.app/wp-content/uploads/2020/05/LogoBranco2x.png"
-              alt="logo branco"
-            />
+            <img src="/img/temp/LogoBranco2x.png" alt="logo branco" />
           </Column>
           <Column size={4}>Todos os direitos reservados</Column>
           <Column size={4}>

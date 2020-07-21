@@ -73,48 +73,42 @@ function Services() {
     {
       title: 'Declaração de Imposto de Renda',
       description: 'Venha fazer o seu imposto de renda conosco',
-      image:
-        'https://www.contabeis.com.br/assets/img/news/n_43398_8d806bbec8ab9ba5235e121c05e3154a.jpg?v=1592331901'
+      image: '/img/temp/imposto_de_renda.jpg'
     },
     {
       title: 'Transporte Marítimo',
       description: 'Problema com transporte marítimo',
-      image:
-        'https://static.todamateria.com.br/upload/55/5d/555d28f1f4094-transporte-maritimo.jpg'
+      image: '/img/temp/555d28f1f4094-transporte-maritimo.jpg'
     },
     {
       title: 'Transporte Rodoviário',
       description: 'Problema com transporte rodoviário',
-      image:
-        'https://www.clicklogtransportes.com.br/wp-content/uploads/2018/11/transporte-rodoviario-de-cargas-660x371.png'
+      image: '/img/temp/rodoviario.png'
     },
     {
       title: 'Transporte Aéreo',
       description: 'Problema com transporte aéreo',
-      image:
-        'https://images.all-free-download.com/images/graphicthumb/aircraft_in_flight_picture_7_168555.jpg'
+      image: '/img/temp/aircraft_in_flight_picture_7_168555.jpg'
     },
     {
       title: 'Assessoria em e-Sports',
       description: 'Problema com e-Sports',
-      image:
-        'https://www.projetodraft.com/wp-content/uploads/2019/05/esports_vale.jpg'
+      image: '/img/temp/esports_vale.jpg'
     },
     {
       title: 'Alimentos impróprios para consumo',
       description: 'Problema com alimentos',
-      image:
-        'https://www.saboravida.com.br/wp-content/uploads/2018/09/alimento-estragado.jpg'
+      image: '/img/temp/alimento-estragado.jpg'
     },
     {
       title: 'Inscrição indevida SPC/Serasa',
       description: 'Problema com SPC/Serasa',
-      image: 'https://isncdn.site/2019/10/acordo-spc-serasa-768x432.png'
+      image: '/img/temp/acordo-spc-serasa-768x432.png'
     },
     {
       title: 'Energia Elétrica',
       description: 'Problema com energia elétrica',
-      image: 'http://www.forumdaconstrucao.com.br/materias/imagens/01858_02.jpg'
+      image: '/img/temp/01858_02.jpg'
     }
   ]
 

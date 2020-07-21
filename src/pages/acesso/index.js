@@ -17,10 +17,7 @@ function Authentication() {
 
   return (
     <Wrapper>
-      <img
-        src="https://leopardus.app/wp-content/uploads/2020/05/logo2.png"
-        alt="Logo branco leopardus"
-      />
+      <img src="/img/temp/logo2.png" alt="Logo branco leopardus" />
       <Row>
         <Column size={12}>
           <TextField

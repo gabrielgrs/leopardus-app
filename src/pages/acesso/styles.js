@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 
-// eslint-disable-next-line
 export const Wrapper = styled.div`
   position: fixed;
   top: 50%;
@@ -19,4 +18,5 @@ export const Wrapper = styled.div`
   }
 `
 
+// TODO: improve build to ignore styles.js
 export default () => null
