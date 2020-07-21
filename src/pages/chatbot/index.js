@@ -11,7 +11,7 @@ function Chatbot() {
 
   const createdDialog = dialogConfig(fields)
 
-  const { answer, fieldName } = createdDialog[currentStep]
+  const { fieldName } = createdDialog[currentStep]
 
   const onChangeField = ({ target }) => {
     setFields((prev) => ({ ...prev, [target.name]: target.value }))
@@ -19,24 +19,26 @@ function Chatbot() {
 
   const onAdvanceStep = () => {
     if (currentStep === createdDialog.length - 1) {
-      return alert('É o último Passo')
+      return null
     }
-    setCurrentStep((prev) => prev + 1)
+    return setCurrentStep((prev) => prev + 1)
   }
 
   const onKeyDown = ({ keyCode }) => {
     if (keyCode === 13) return onAdvanceStep()
+    return null
   }
 
   const renderBotMessage = (botMessages) =>
-    botMessages.map((bm, index) => (
-      <Row key={index}>
+    botMessages.map((bm) => (
+      <Row key={bm}>
         <Column size={12}>
           <BotMessage>
             <RenderWithDelay
               timeout={String(bm).length * 10}
               componentWhileWaiting={<Typing color="primary" />}
             >
+              {/* eslint-disable-next-line */}
               <span dangerouslySetInnerHTML={{ __html: bm }} />
             </RenderWithDelay>
           </BotMessage>
@@ -44,13 +46,13 @@ function Chatbot() {
       </Row>
     ))
 
-  const renderUserMessage = (fieldName, isTyping) => {
-    if (!fieldName) return null
+  const renderUserMessage = (fieldAlias, isTyping) => {
+    if (!fieldAlias) return null
     return (
       <Row>
         <Column size={12}>
           <UserMessage fromUser>
-            {isTyping ? <Typing color="white" /> : fields[fieldName]}
+            {isTyping ? <Typing color="white" /> : fields[fieldAlias]}
           </UserMessage>
         </Column>
       </Row>
@@ -79,6 +81,7 @@ function Chatbot() {
             placeholder="Digite sua resposta"
           />
         </div>
+        {/* eslint-disable-next-line */}
         <div className="action" onClick={onAdvanceStep}>
           <Icon name="FiCornerDownRight" />
         </div>

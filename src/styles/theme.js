@@ -12,11 +12,12 @@ const baseColors = {
 }
 
 export const colors = Object.keys(baseColors).reduce((arr, curr) => {
-  arr = {
+  return {
     ...arr,
     [curr]: baseColors[curr],
     [`${curr}Light`]: lighten(0.05, baseColors[curr]),
     [`${curr}Dark`]: darken(0.05, baseColors[curr])
   }
-  return arr
 }, {})
+
+export const boxShadow = {}

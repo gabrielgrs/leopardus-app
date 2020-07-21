@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Row, Column, TextField, Button, Heading } from 'components'
+import { Heading } from 'components'
 
 const Wrapper = styled.div`
   background: ${({ theme }) => theme.colors.blackLight};

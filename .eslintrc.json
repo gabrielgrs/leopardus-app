@@ -3,7 +3,11 @@
     "browser": true,
     "es2020": true
   },
-  "extends": ["plugin:react/recommended"],
+  "extends": [
+    "plugin:react/recommended",
+    "airbnb",
+    "plugin:prettier/recommended"
+  ],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -14,11 +18,19 @@
   "settings": {
     "react": {
       "version": "detect"
+    },
+    "import/resolver": {
+      "node": {
+        "paths": ["src"]
+      }
     }
   },
   "plugins": ["react", "react-hooks"],
   "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "jsx-a11y/anchor-is-valid": "off",
     "react-hooks/rules-of-hooks": "error",
+    "react/jsx-props-no-spreading": "off",
     "react-hooks/exhaustive-deps": "warn",
     "react/prop-types": "off",
     "react/react-in-jsx-scope": "off"

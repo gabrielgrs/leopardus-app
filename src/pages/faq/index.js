@@ -91,8 +91,8 @@ function FrequentlyQuestions() {
   return (
     <>
       <CategoriesWrapper>
-        {faqList.map((item, index) => (
-          <Category key={index}>
+        {faqList.map((item) => (
+          <Category key={item.title}>
             <a href={`#${item.title}`}>{item.title}</a>
           </Category>
         ))}
@@ -101,9 +101,10 @@ function FrequentlyQuestions() {
         {faqList.map((q) => (
           <div key={q.title} className="section" id={q.title}>
             <h1 style={{ textAlign: 'center' }}>{q.title}</h1>
-            {q.questions.map((i, index) => (
-              <div key={index}>
-                {i.question}: {i.answer}
+            {q.questions.map((i) => (
+              <div key={i.question}>
+                {i.question}
+                {i.answer}
               </div>
             ))}
           </div>

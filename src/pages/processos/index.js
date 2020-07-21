@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Row, Column, Icon } from 'components'
-import ContentLoader from 'react-content-loader'
 import { useRouter } from 'next/router'
+import { CardsLoader } from 'components/Loaders'
 import {
   Wrapper,
   Card,
@@ -11,26 +11,6 @@ import {
   StatusWrapper,
   Status
 } from './styles'
-
-const CardsLoader = () => {
-  const boxList = [
-    <rect key={1} x="0" y="0" rx="2" ry="2" width="120" height="20" />,
-    <rect key={2} x="140" y="0" rx="2" ry="2" width="120" height="20" />,
-    <rect key={3} x="280" y="0" rx="2" ry="2" width="120" height="20" />,
-    <rect key={4} x="0" y="25" rx="2" ry="2" width="120" height="20" />,
-    <rect key={5} x="140" y="25" rx="2" ry="2" width="120" height="20" />,
-    <rect key={6} x="280" y="25" rx="2" ry="2" width="120" height="20" />,
-    <rect key={7} x="0" y="50" rx="2" ry="2" width="120" height="20" />
-  ]
-
-  const randomNumber = Math.floor(Math.random() * boxList.length) + 1
-
-  return (
-    <ContentLoader backgroundColor="silver" viewBox="0 0 380 70">
-      {boxList.filter((_, index) => index < randomNumber).map((i) => i)}
-    </ContentLoader>
-  )
-}
 
 function Process() {
   const mock = () =>
@@ -58,9 +38,9 @@ function Process() {
     'Concluido'
   ]
 
-  const onSelectStatus = async (status) => {
+  const onSelectStatus = async (statusToSet) => {
     setLoading(true)
-    setActiveStatus(status)
+    setActiveStatus(statusToSet)
     setTimeout(() => {
       setProcessList(mock)
       setLoading(false)
@@ -79,7 +59,7 @@ function Process() {
           <StatusWrapper>
             {status.map((s, index) => (
               <Status
-                key={index}
+                key={s}
                 isActive={index === activeStatus}
                 onClick={() => onSelectStatus(index)}
               >
@@ -93,8 +73,8 @@ function Process() {
         <CardsLoader />
       ) : (
         <Row>
-          {processList.map((i, index) => (
-            <Column key={index} size={4}>
+          {processList.map((i) => (
+            <Column key={i.id} size={4}>
               <Card>
                 <CardHeader>
                   <div>{i.name}</div>

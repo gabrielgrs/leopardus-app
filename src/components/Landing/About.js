@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 import Row from 'components/Row'
 import Column from 'components/Column'
-import Icon from 'components/Icon'
 
 const Wrapper = styled.div`
   text-align: center;

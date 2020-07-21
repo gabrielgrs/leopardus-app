@@ -47,7 +47,11 @@ function Contact() {
       <Section isMain>
         <h2>Faça uma simulação</h2>
         <h3>Qual o valor da sua indenização?</h3>
-        <h3>R$ {indenization},00</h3>
+        <h3>
+          R$
+          {indenization}
+          ,00
+        </h3>
         <Slider
           value={indenization}
           step={100}
@@ -56,7 +60,7 @@ function Contact() {
           onChange={(v) => setIndenization(v)}
         />
         <div>
-          {Boolean(indenization)
+          {indenization
             ? `Os honorários serão de: R$ ${fees} e você receberá R$ ${
                 indenization - fees
               }`

@@ -22,7 +22,7 @@ const Nav = styled.nav`
 const Hamburger = styled.div`
   cursor: pointer;
   z-index: 3;
-  color: ${({ theme, isOpen }) => theme.colors.black};
+  color: ${({ theme }) => theme.colors.black};
 
   font-size: 2em;
   top: 10px;

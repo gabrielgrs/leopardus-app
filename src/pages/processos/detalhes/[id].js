@@ -1,52 +1,11 @@
 import { useState, useEffect, useCallback } from 'react'
-import styled from 'styled-components'
-import { rgba } from 'polished'
-import { Row, Column, Icon, Button } from 'components'
-
-import ContentLoader from 'react-content-loader'
 import { useRouter } from 'next/router'
-
-const Wrapper = styled.div`
-  padding: 50px 5%;
-
-  .icon {
-    cursor: pointer;
-    opacity: 0.5;
-    font-size: 3em;
-
-    &:hover {
-      opacity: 1;
-      color: ${({ theme }) => theme.colors.primary};
-    }
-  }
-`
-
-const Card = styled.div`
-  border: ${({ theme }) => `solid ${theme.colors.silver} 2px`};
-  padding: 5px 10px;
-  border-radius: 8px;
-  box-shadow: ${({ theme, disabled }) =>
-    !disabled && `0 0 10px ${rgba(theme.colors.primary, 0.5)}`};
-
-  &:hover {
-    border: ${({ theme }) => `solid ${theme.colors.primary} 2px`};
-  }
-`
-
-const DetailsLoader = () => {
-  return (
-    <ContentLoader backgroundColor="silver" viewBox="0 0 380 300">
-      <rect x="10" y="0" rx="2" ry="2" width="20" height="15" />
-      <rect x="50" y="0" rx="2" ry="2" width="40" height="15" />
-      <rect x="110" y="0" rx="2" ry="2" width="40" height="15" />
-      <rect x="10" y="20" rx="2" ry="2" width="350" height="40" />
-      <rect x="10" y="70" rx="2" ry="2" width="350" height="40" />
-    </ContentLoader>
-  )
-}
+import { Row, Column, Icon, Button } from 'components'
+import { DetailsLoader } from 'components/Loaders'
+import { Wrapper, Card } from './styles'
 
 function Process() {
-  const { query, push } = useRouter()
+  const { push } = useRouter()
 
   const mock = () => ({
     name: `Fulano`,
@@ -94,19 +53,24 @@ function Process() {
             <h1>Dados pessoais</h1>
             <Row>
               <Column size={3}>
-                <strong>Nome: </strong> {processInformations.name}
+                <strong>Nome: </strong>
+                {processInformations.name}
               </Column>
               <Column size={3}>
-                <strong>CPF: </strong> {processInformations.identity}
+                <strong>CPF: </strong>
+                {processInformations.identity}
               </Column>
               <Column size={3}>
-                <strong>Telefone: </strong> {processInformations.phone}
+                <strong>Telefone: </strong>
+                {processInformations.phone}
               </Column>
               <Column size={3}>
-                <strong>E-mail: </strong> {processInformations.email}
+                <strong>E-mail: </strong>
+                {processInformations.email}
               </Column>
               <Column size={12}>
-                <strong>Endereço: </strong> {processInformations.address}
+                <strong>Endereço: </strong>
+                {processInformations.address}
               </Column>
               <Column size={12}>
                 <strong>Conta Bancária: </strong>
@@ -120,17 +84,19 @@ function Process() {
             <h1>Dados do Processo</h1>
             <Row>
               <Column size={4}>
-                <strong>Status Interno:</strong>{' '}
+                <strong>Status Interno:</strong>
                 {processInformations.internalStatus}
               </Column>
               <Column size={4}>
-                <strong>Categoria:</strong> {processInformations.category}
+                <strong>Categoria:</strong>
+                {processInformations.category}
               </Column>
               <Column size={4}>
-                <strong>Protocolo:</strong> {processInformations.protocol}
+                <strong>Protocolo:</strong>
+                {processInformations.protocol}
               </Column>
               <Column size={4}>
-                <strong>Informações Adicionais:</strong>{' '}
+                <strong>Informações Adicionais:</strong>
                 {processInformations.observations}
               </Column>
             </Row>

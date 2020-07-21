@@ -1,9 +1,8 @@
 import styled from 'styled-components'
 
+import useWindowSize from 'hooks/useWindowSize'
 import Default from './default'
 import Mobile from './mobile'
-
-import useWindowSize from 'hooks/useWindowSize'
 
 const Wrapper = styled.div`
   @media screen and (max-width: 700px) {

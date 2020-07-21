@@ -20,14 +20,7 @@ const getWidthByQuantity = (size) => {
   return sizes[size]
 }
 
-const getButtonMargin = ({ justifyContent }) => {
-  if (justifyContent === 'flex-end') {
-    return `0 0 0 10px`
-  }
-
-  return `0 10px 0 0`
-}
-
+// eslint-disable-next-line
 export const StyledColumn = styled.div`
   width: 96%;
 

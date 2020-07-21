@@ -1,7 +1,5 @@
 import styled from 'styled-components'
-import { Icon } from 'components'
 import Heading from 'components/Heading'
-import { rgba } from 'polished'
 import Row from 'components/Row'
 import Column from 'components/Column'
 
@@ -69,7 +67,6 @@ const Card = styled.div`
 
 function Services() {
   const list = [
-    ,
     { title: 'Declaração de Imposto de Renda', icon: 'FiBell' },
     { title: 'Transporte Marítimo', icon: 'FiBell' },
     { title: 'Transporte Rodoviário', icon: 'FiBell' },
@@ -87,8 +84,8 @@ function Services() {
         subtitle="Essas são todas as áreas as quais atuamos"
       />
       <Row>
-        {list.map((i, index) => (
-          <Column key={index} size={3}>
+        {list.map((i) => (
+          <Column key={i.title} size={3}>
             <Card>
               <div className="flip-box-inner">
                 <div className="flip-box-front">

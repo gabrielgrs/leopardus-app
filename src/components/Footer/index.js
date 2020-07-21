@@ -37,12 +37,17 @@ function Footer() {
       <Wrapper>
         <Row>
           <Column size={4}>
-            <img src="https://leopardus.app/wp-content/uploads/2020/05/LogoBranco2x.png" />
+            <img
+              src="https://leopardus.app/wp-content/uploads/2020/05/LogoBranco2x.png"
+              alt="logo branco"
+            />
           </Column>
           <Column size={4}>Todos os direitos reservados</Column>
           <Column size={4}>
-            <a href="direitos">Direitos Autorias</a> |{' '}
-            <a href="termos">Termos de Uso</a> |{' '}
+            <a href="direitos">Direitos Autorias</a>
+            {' | '}
+            <a href="termos">Termos de Uso</a>
+            {' | '}
             <a href="/privacidade">Política de Privacidade</a>
           </Column>
         </Row>

@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import { rgba } from 'polished'
-import { Button } from 'components'
 
 export const Wrapper = styled.div`
   animation-duration: 1s;

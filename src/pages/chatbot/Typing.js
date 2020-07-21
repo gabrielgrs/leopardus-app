@@ -67,12 +67,12 @@ const Wrapper = styled.div`
   }
 `
 
-function Typing({ ...rest }) {
+function Typing({ color }) {
   return (
-    <Wrapper {...rest}>
-      <span className="circle scaling"></span>
-      <span className="circle bouncing"></span>
-      <span className="circle scaling"></span>
+    <Wrapper color={color}>
+      <span className="circle scaling" />
+      <span className="circle bouncing" />
+      <span className="circle scaling" />
     </Wrapper>
   )
 }
