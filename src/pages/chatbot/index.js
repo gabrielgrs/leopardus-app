@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import styled, { keyframes } from 'styled-components'
 import { Icon, TextField, Row, Column } from 'components'
+import dialogConfig from 'helpers/dialog'
 import Typing from './Typing'
-import dialogConfig from './dialog'
 import RenderWithDelay from './RenderWithDelay'
 
 const botMessageAnimation = keyframes`

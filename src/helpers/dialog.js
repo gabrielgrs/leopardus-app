@@ -2,10 +2,10 @@ const types = {
   textField: 'textField'
 }
 
-export default (fields) => [
+const dialog = (fields) => [
   {
     botMessage: [
-      `Olá!  Eu sou o Leopardus, um aplicativo criado com o intuito de ajudar você a resolver o seu problema da forma mais rápida possível! <br /> 
+      `Olá!  Eu sou o Leopardus, um aplicativo criado com o intuito de ajudar você a resolver o seu problema da forma mais rápida possível! <br />
       Antes de começar, como você gostaria de ser chamado?`
     ],
     answer: {
@@ -53,3 +53,5 @@ export default (fields) => [
     fieldName: 'temp'
   }
 ]
+
+export default dialog
