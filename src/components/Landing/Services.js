@@ -83,7 +83,7 @@ function Services() {
     {
       title: 'Transporte Rodoviário',
       description: 'Problema com transporte rodoviário',
-      image: '/img/temp/rodoviario.png'
+      image: '/img/temp/rodoviario.jpg'
     },
     {
       title: 'Transporte Aéreo',
@@ -103,7 +103,7 @@ function Services() {
     {
       title: 'Inscrição indevida SPC/Serasa',
       description: 'Problema com SPC/Serasa',
-      image: '/img/temp/acordo-spc-serasa-768x432.png'
+      image: '/img/temp/acordo-spc-serasa-768x432.jpg'
     },
     {
       title: 'Energia Elétrica',

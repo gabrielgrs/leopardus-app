@@ -12,7 +12,7 @@ function Contact() {
   return (
     <Wrapper>
       <Heading title="Equipe" subtitle="Chega mais e nos conheça melhor!" />
-      <img src="/img/temp/ADVOGADO-TISAGORAS.png" alt="Tiságoras" />
+      <img src="/img/temp/ADVOGADO-TISAGORAS.jpg" alt="Tiságoras" />
       <h3>Tiságoras Felício Antunes Mariani</h3>
       <p>
         Advogado inscrito na OAB/RS sob o nº 110.754. O Tiságoras cursou direito

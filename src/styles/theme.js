@@ -2,7 +2,7 @@ import { lighten, darken } from 'polished'
 
 const baseColors = {
   primary: '#8a05be',
-  secondary: '#15dcf4',
+  secondary: '#ff0083',
   white: '#ffffff',
   black: '#282828',
   silver: '#dadada', // #c0c0c0 || #d9d9d9

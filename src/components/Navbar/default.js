@@ -75,7 +75,7 @@ function Navbar() {
       </Section>
       <Section>
         <Brand isHome={isHome} scrollOnTop={scrollOnTop}>
-          <img src="/img/temp/logo2.png" alt="Logo" />
+          <img src="/img/temp/logo2.jpg" alt="Logo" />
         </Brand>
       </Section>
       <Section>

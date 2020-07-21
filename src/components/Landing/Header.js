@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 
 const Wrapper = styled.div`
   padding: 25% 3% 30%;
-  background-image: url('/img/temp/banner-site.png');
+  background-image: url('/img/temp/banner-site.jpg');
   background-size: 100%;
   background-repeat: no-repeat;
   display: flex;
@@ -23,7 +23,7 @@ function Home() {
   return (
     <Wrapper>
       <h1>Leopardus</h1>
-      <h3>Resultados sem sair do conforme de casa.</h3>
+      <h2>Resultados sem sair do conforme de casa.</h2>
       <Button onClick={() => push('/chatbot')}>Converse com o Leo</Button>
     </Wrapper>
   )

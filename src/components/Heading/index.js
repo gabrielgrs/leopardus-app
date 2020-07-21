@@ -10,9 +10,9 @@ const Title = styled.h1`
   font-size: 2.5em;
 `
 
-const Subtitle = styled.h3`
+const Subtitle = styled.h2`
   font-size: 1em;
-  color: ${({ theme }) => theme.colors.primaryLight};
+  color: ${({ theme }) => theme.colors.secondary};
 `
 
 function Heading({ title, subtitle }) {

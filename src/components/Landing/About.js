@@ -41,7 +41,7 @@ function About() {
         </Row>
         <Row>
           <Column size={8}>
-            <h3>Converse com o Leo e faça uma análise do seu caso!</h3>
+            <h2>Converse com o Leo e faça uma análise do seu caso!</h2>
             <p>
               E não se preocupe! Esta análise inicial não possui custos e você
               só pagará honorários sobre o valor da indenização recebida. Ou

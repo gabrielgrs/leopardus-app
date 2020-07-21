@@ -17,7 +17,7 @@ function Authentication() {
 
   return (
     <Wrapper>
-      <img src="/img/temp/logo2.png" alt="Logo branco leopardus" />
+      <img src="/img/temp/logo2.jpg" alt="Logo branco leopardus" />
       <Row>
         <Column size={12}>
           <TextField
