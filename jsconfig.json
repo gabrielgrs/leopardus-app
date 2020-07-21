@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "target": "es5",
+    "skipLibCheck": true,
+    "strict": true,
+
+  },
+  "exclude": ["node_modules"],
+}
