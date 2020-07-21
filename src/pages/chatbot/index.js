@@ -64,14 +64,14 @@ function Chatbot() {
       {createdDialog.map((dialog, index) => {
         if (currentStep < index) return null
         return (
-          <>
+          <div key={dialog.fieldName}>
             {renderBotMessage(dialog.botMessage)}
             {fields[dialog.fieldName] &&
               renderUserMessage(dialog.fieldName, index === currentStep)}
-          </>
+          </div>
         )
       })}
-      <InterationArea>
+      <InterationArea key={fieldName}>
         <div className="input">
           <TextField
             name={fieldName}

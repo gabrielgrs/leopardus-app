@@ -32,7 +32,6 @@ function Process() {
     'Verificação',
     'Acordo',
     'Audiência',
-    'Sentença',
     'Recurso',
     'Sentença',
     'Concluido'

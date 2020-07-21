@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { Button } from 'components'
+import { useRouter } from 'next/router'
 
 const Wrapper = styled.div`
   padding: 25% 3% 30%;
@@ -18,11 +19,12 @@ const Wrapper = styled.div`
 `
 
 function Home() {
+  const { push } = useRouter()
   return (
     <Wrapper>
       <h1>Leopardus</h1>
       <h3>Resultados sem sair do conforme de casa.</h3>
-      <Button>Converse com o Leo</Button>
+      <Button onClick={() => push('/chatbot')}>Converse com o Leo</Button>
     </Wrapper>
   )
 }

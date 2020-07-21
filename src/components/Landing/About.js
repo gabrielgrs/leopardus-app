@@ -51,7 +51,7 @@ function About() {
           <Column size={4}>
             <img
               src="https://www.lemonade.com/_next/static/images/bg-app-sketch-6a1411234063f5ee57ef246ff974ceaf.svg"
-              alt=""
+              alt="lemonade svg"
             />
           </Column>
         </Row>
