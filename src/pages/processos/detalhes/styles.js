@@ -27,3 +27,6 @@ export const Card = styled.div`
     border: ${({ theme }) => `solid ${theme.colors.primary} 2px`};
   }
 `
+
+// TODO: improve build to ignore styles.js
+export default () => null

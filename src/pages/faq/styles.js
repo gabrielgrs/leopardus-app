@@ -41,3 +41,6 @@ export const Category = styled.div`
   &:after {
   }
 `
+
+// TODO: improve build to ignore styles.js
+export default () => null

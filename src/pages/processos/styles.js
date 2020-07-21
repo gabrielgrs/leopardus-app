@@ -81,3 +81,6 @@ export const CardFooter = styled.div`
   font-size: 0.8em;
   color: ${({ theme }) => theme.colors.silverDark};
 `
+
+// TODO: improve build to ignore styles.js
+export default () => null

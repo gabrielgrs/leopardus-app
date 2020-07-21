@@ -95,3 +95,6 @@ export const BotMessage = styled(Message)`
   float: left;
   border-radius: 0px 18px 18px 18px;
 `
+
+// TODO: improve build to ignore styles.js
+export default () => null
