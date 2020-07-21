@@ -41,7 +41,7 @@ const Wrapper = styled.button`
 
 function Button({ children, onClick, ...rest }) {
   return (
-    <Wrapper {...rest} onClick={onClick}>
+    <Wrapper {...rest} onClick={rest.disabled ? () => null : onClick}>
       {children}
     </Wrapper>
   )

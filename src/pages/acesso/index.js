@@ -1,25 +1,7 @@
-import styled from 'styled-components'
 import { Row, Column, TextField, Button } from 'components'
 import { useState } from 'react'
 import { useRouter } from 'next/router'
-
-const Wrapper = styled.div`
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  & img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 10%;
-  }
-
-  @media screen and (max-width: 700px) {
-    width: 100%;
-  }
-`
+import { Wrapper } from './styles'
 
 function Authentication() {
   const [fields, setFields] = useState({ email: '', password: '' })
