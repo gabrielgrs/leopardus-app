@@ -1,10 +1,10 @@
+import 'rc-slider/assets/index.css'
 import Head from 'next/head'
-
 import GlobalStyles from 'styles/global'
+import { AuthProvider } from 'hooks/useAuth'
 import { ThemeProvider } from 'styled-components'
 import { Navbar } from 'components'
 import * as theme from 'styles/theme'
-import 'rc-slider/assets/index.css'
 
 function App({ Component, pageProps }) {
   return (
@@ -16,11 +16,13 @@ function App({ Component, pageProps }) {
         <link rel="manifest" href="/manifest.json" />
         <meta name="description" content="Leopardus Application" />
       </Head>
-      <ThemeProvider theme={theme}>
-        <Navbar />
-        <GlobalStyles theme={theme} />
-        <Component {...pageProps} />
-      </ThemeProvider>
+      <AuthProvider>
+        <ThemeProvider theme={theme}>
+          <Navbar />
+          <GlobalStyles theme={theme} />
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </AuthProvider>
     </>
   )
 }

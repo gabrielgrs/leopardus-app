@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import styled from 'styled-components'
 
 import useWindowSize from 'hooks/useWindowSize'
@@ -11,10 +12,25 @@ const Wrapper = styled.div`
 `
 
 function Navbar() {
+  const [isMobile, setIsMobile] = useState(true)
   const { width } = useWindowSize()
 
-  const isMobile = width < 720
-  return <Wrapper>{isMobile ? <Mobile /> : <Default />}</Wrapper>
+  useEffect(() => {
+    setIsMobile(width < 1000)
+  }, [width])
+
+  if (isMobile)
+    return (
+      <Wrapper key="mobile">
+        <Mobile />
+      </Wrapper>
+    )
+
+  return (
+    <Wrapper key="desktop">
+      <Default />
+    </Wrapper>
+  )
 }
 
 export default Navbar

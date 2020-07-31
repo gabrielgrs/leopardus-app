@@ -2,6 +2,7 @@ export { default as Navbar } from './Navbar'
 export { default as Footer } from './Footer'
 
 export { default as TextField } from './TextField'
+export { default as Select } from './Select'
 export { default as Button } from './Button'
 
 export { default as Row } from './Row'

@@ -74,6 +74,7 @@ function Chatbot() {
       <InterationArea key={fieldName}>
         <div className="input">
           <TextField
+            autoFocus
             name={fieldName}
             value={fields[fieldName]}
             onKeyDown={onKeyDown}

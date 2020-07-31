@@ -6,6 +6,10 @@ const Wrapper = styled.div`
   color: ${({ theme }) => theme.colors.white};
   padding: 30px 10%;
   text-align: center;
+
+  & img {
+    max-width: 100%;
+  }
 `
 
 function Contact() {

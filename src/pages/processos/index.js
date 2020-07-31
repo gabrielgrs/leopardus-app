@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react'
-import { Row, Column, Icon } from 'components'
 import { useRouter } from 'next/router'
+import { getAllProcess } from 'api/process'
+import { Row, Column, Icon, Select } from 'components'
 import { CardsLoader } from 'components/Loaders'
+import { status } from 'helpers/status'
 import {
   Wrapper,
   Card,
@@ -13,42 +15,22 @@ import {
 } from './styles'
 
 function Process() {
-  const mock = () =>
-    Array.from({ length: 10 }).map((_, index) => ({
-      id: index + 1,
-      name: `Fulano ${index}`,
-      createdAt: new Date(),
-      category: 'Categoria'
-    }))
-
+  const initialStatus = Object.keys(status)[0]
   const [loading, setLoading] = useState(false)
   const [processList, setProcessList] = useState([])
-  const [activeStatus, setActiveStatus] = useState(0)
+  const [activeStatus, setActiveStatus] = useState(initialStatus)
 
   const { push } = useRouter()
 
-  const status = [
-    'Novo',
-    'Verificação',
-    'Acordo',
-    'Audiência',
-    'Recurso',
-    'Sentença',
-    'Concluido'
-  ]
-
-  const onSelectStatus = async (statusToSet) => {
+  const onGetProcessList = async () => {
     setLoading(true)
-    setActiveStatus(statusToSet)
-    setTimeout(() => {
-      setProcessList(mock)
-      setLoading(false)
-    }, 1000)
+    const data = await getAllProcess()
+    setProcessList(data)
+    setLoading(false)
   }
 
   useEffect(() => {
-    onSelectStatus(0)
-    // eslint-disable-next-line
+    onGetProcessList()
   }, [])
 
   return (
@@ -56,13 +38,13 @@ function Process() {
       <Row>
         <Column size={12}>
           <StatusWrapper>
-            {status.map((s, index) => (
+            {Object.keys(status).map((s) => (
               <Status
                 key={s}
-                isActive={index === activeStatus}
-                onClick={() => onSelectStatus(index)}
+                isActive={s === activeStatus}
+                onClick={() => setActiveStatus(s)}
               >
-                {s}
+                {status[s]}
               </Status>
             ))}
           </StatusWrapper>
@@ -72,25 +54,40 @@ function Process() {
         <CardsLoader />
       ) : (
         <Row>
-          {processList.map((i) => (
-            <Column key={i.id} size={4}>
-              <Card>
-                <CardHeader>
-                  <div>{i.name}</div>
-                  <div>
-                    <Icon
-                      onClick={() => push(`/processos/detalhes/${i.id}`)}
-                      name="FiEye"
-                    />
-                  </div>
-                </CardHeader>
-                <CardBody>
-                  <div>{i.category}</div>
-                </CardBody>
-                <CardFooter>{new Date(i.createdAt).toISOString()}</CardFooter>
-              </Card>
-            </Column>
-          ))}
+          {processList
+            .filter((x) => x.status === activeStatus)
+            .map((i) => (
+              <Column key={i.id} size={4}>
+                <Card>
+                  <CardHeader>
+                    <div>{i.name}</div>
+                    <div>
+                      <Icon
+                        onClick={() => push(`/processos/detalhes/${i.id}`)}
+                        name="FiEye"
+                      />
+                    </div>
+                  </CardHeader>
+                  <CardBody>
+                    <div>{i.category}</div>
+                  </CardBody>
+                  <CardFooter>
+                    <div>{new Date(i.createdAt).toISOString()}</div>
+                    <div style={{ padding: '10px 20px' }}>
+                      <Select
+                        name="select"
+                        // onChange={e => }
+                        options={Object.keys(status).map((o) => ({
+                          text: status[o],
+                          value: o
+                        }))}
+                        small
+                      />
+                    </div>
+                  </CardFooter>
+                </Card>
+              </Column>
+            ))}
         </Row>
       )}
     </Wrapper>

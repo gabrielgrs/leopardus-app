@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { Button } from 'components'
 import styled from 'styled-components'
-import { rgba } from 'polished'
+import { useAuth } from 'hooks/useAuth'
 
 const Wrapper = styled.nav`
   width: 100%;
@@ -14,7 +14,7 @@ const Wrapper = styled.nav`
   align-items: center;
   font-size: 1.4em;
   background: ${({ scrollOnTop, theme }) =>
-    scrollOnTop ? rgba(theme.colors.white, 0) : theme.colors.whiteLight};
+    scrollOnTop ? 'transparent' : theme.colors.whiteDark};
   border-bottom: ${({ scrollOnTop, theme }) =>
     !scrollOnTop && `solid ${theme.colors.silver} 1px`};
   height: ${({ scrollOnTop }) => (scrollOnTop ? '80px' : '70px')};
@@ -35,7 +35,7 @@ const Item = styled.div`
   transition: all 0.5s;
 
   &:hover {
-    color: ${({ theme }) => theme.colors.silverDark};
+    color: ${({ theme }) => theme.colors.primaryLight};
   }
 `
 
@@ -46,6 +46,10 @@ const Brand = styled.div`
   margin-top: ${({ scrollOnTop, isHome }) =>
     isHome && scrollOnTop ? '160px' : '0px'};
   transition: all 0.5s;
+
+  & img {
+    height: 70px;
+  }
 `
 
 function Link({ children, path, isButton }) {
@@ -56,6 +60,7 @@ function Link({ children, path, isButton }) {
 
 function Navbar() {
   const [scrollOnTop, setScrollOnTop] = useState(true)
+  const { isAuthenticated } = useAuth()
 
   useEffect(() => {
     const onScroll = () => setScrollOnTop(window.scrollY < 70)
@@ -75,12 +80,13 @@ function Navbar() {
       </Section>
       <Section>
         <Brand isHome={isHome} scrollOnTop={scrollOnTop}>
-          <img src="/img/temp/logo2.jpg" alt="Logo" />
+          <img src="/img/temp/leopardus-logo.png" alt="Logo" />
         </Brand>
       </Section>
       <Section>
-        <Link path="/acesso">Acesso</Link>
-        <Link path="/processos">Processo</Link>
+        <Link path="/consulta">Consulta</Link>
+        {!isAuthenticated && <Link path="/acesso">Acesso</Link>}
+        {isAuthenticated && <Link path="/processos">Processos</Link>}
         <Link path="/chatbot" isButton>
           Converse com o Leo
         </Link>

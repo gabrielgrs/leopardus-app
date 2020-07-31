@@ -1,29 +1,24 @@
 import { useState, useEffect, useCallback } from 'react'
 import { useRouter } from 'next/router'
+import { getProcessByIdentifier } from 'api/process'
 import { Row, Column, Icon, Button } from 'components'
 import { DetailsLoader } from 'components/Loaders'
 import { Wrapper, Card } from './styles'
 
 function Process() {
-  const { push } = useRouter()
-
-  const mock = () => ({
-    name: `Fulano`,
-    createdAt: new Date(),
-    category: 'Categoria'
-  })
+  const { push, query } = useRouter()
 
   const [loading, setLoading] = useState(false)
   const [processInformations, SetProcessInformations] = useState(undefined)
 
   const onGetProcessInformations = useCallback(async () => {
-    // query.id
-    setLoading(true)
-    setTimeout(() => {
-      SetProcessInformations(mock)
+    if (query.id) {
+      setLoading(true)
+      const { data } = await getProcessByIdentifier(query.id)
+      SetProcessInformations(data)
       setLoading(false)
-    }, 1000)
-  }, [])
+    }
+  }, [query.id])
 
   useEffect(() => {
     onGetProcessInformations(0)
@@ -46,7 +41,7 @@ function Process() {
           <Button width="100%">Editar</Button>
         </Column>
         <Column size={2}>
-          <Button width="100%">Baixar procuração</Button>
+          <Button width="100%">procuração</Button>
         </Column>
         <Column size={12}>
           <Card>

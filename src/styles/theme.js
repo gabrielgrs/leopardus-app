@@ -4,7 +4,7 @@ const baseColors = {
   primary: '#8a05be',
   secondary: '#ff0083',
   white: '#ffffff',
-  black: '#282828',
+  black: '#121214',
   silver: '#dadada', // #c0c0c0 || #d9d9d9
   success: '#5cf590',
   danger: '#ff4141',
